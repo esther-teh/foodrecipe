@@ -15,19 +15,21 @@ import { SearchComponent } from '../../partials/search/search.component';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-  foods:Food[] = [];
-  constructor(private foodService:FoodService, activatedRoute: ActivatedRoute) { 
-    activatedRoute.params.subscribe((params) => {
-      if(params.searchTerm)
-      this.foods = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
-      else
-      this.foods = foodService.getAll();
-    })
-  
-  }
+  foods: Food[] = [];
+  constructor(
+    private foodService: FoodService,
+    private readonly activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe({
+      next: (params) => {
+        if (params.searchTerm)
+          this.foods = this.foodService.getAllFoodsBySearchTerm(
+            params.searchTerm
+          );
+        else this.foods = this.foodService.getAll();
+      },
+    });
   }
 }
-

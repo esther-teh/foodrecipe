@@ -4,13 +4,7 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { HomeComponent } from './components/pages/home/home.component';
 
 @NgModule({
-    declarations: [
-      
-    ],
-    imports: [
-      HomeComponent,
-      StarRatingComponent,
-      SearchComponent,
-    ]
+  declarations: [],
+  imports: [HomeComponent, StarRatingComponent, SearchComponent],
 })
-export class AppModule { }
+export class AppModule {}

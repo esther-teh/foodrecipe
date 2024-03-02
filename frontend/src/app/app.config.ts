@@ -8,6 +8,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter([
       { path: '', component: HomeComponent },
       { path: 'search/:searchTerm', component: HomeComponent },
+      { path: 'tag/:tag', component: HomeComponent }
     ]),
     provideClientHydration(),
   ],

@@ -3,8 +3,7 @@ import { StarRatingComponent } from './components/partials/star-rating/star-rati
 import { SearchComponent } from './components/partials/search/search.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
-import { CommonModule } from '@angular/common';
-import { AppComponent } from './app.component';
+import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 
 
 @NgModule({
@@ -12,7 +11,7 @@ import { AppComponent } from './app.component';
   imports: [HomeComponent,
             StarRatingComponent, 
             SearchComponent, 
-            TagsComponent, 
-            CommonModule],
+            TagsComponent,
+            FoodPageComponent],
 })
 export class AppModule {}

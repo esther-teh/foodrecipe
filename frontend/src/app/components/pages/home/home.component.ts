@@ -30,7 +30,8 @@ export class HomeComponent implements OnInit {
             params.searchTerm
           );
         else if (params.tag) this.foods = this.foodService.getAllFoodsByTag(params.tag);
-        else this.foods = this.foodService.getAll();
+        else 
+          this.foods = this.foodService.getAll();
       },
     });
   }

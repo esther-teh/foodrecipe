@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FoodService } from '../../../services/food.service';
 import { Food } from '../../../shared/models/Food';
 import { StarRatingComponent } from '../../partials/star-rating/star-rating.component';
@@ -19,6 +19,7 @@ import { TagsComponent } from "../../partials/tags/tags.component";
     CurrencyPipe,
     SearchComponent,
     TagsComponent,
+    RouterLink
   ],
 })
 export class HomeComponent implements OnInit {

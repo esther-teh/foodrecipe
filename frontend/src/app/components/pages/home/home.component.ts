@@ -9,11 +9,17 @@ import { SearchComponent } from '../../partials/search/search.component';
 import { TagsComponent } from "../../partials/tags/tags.component";
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    imports: [StarRatingComponent, NgFor, CurrencyPipe, SearchComponent, TagsComponent]
+  selector: 'app-home',
+  standalone: true,
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  imports: [
+    StarRatingComponent,
+    NgFor,
+    CurrencyPipe,
+    SearchComponent,
+    TagsComponent,
+  ],
 })
 export class HomeComponent implements OnInit {
   foods: Food[] = [];
@@ -29,9 +35,9 @@ export class HomeComponent implements OnInit {
           this.foods = this.foodService.getAllFoodsBySearchTerm(
             params.searchTerm
           );
-        else if (params.tag) this.foods = this.foodService.getAllFoodsByTag(params.tag);
-        else 
-          this.foods = this.foodService.getAll();
+        else if (params.tag)
+          this.foods = this.foodService.getAllFoodsByTag(params.tag);
+        else this.foods = this.foodService.getAll();
       },
     });
   }

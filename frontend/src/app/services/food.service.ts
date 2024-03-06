@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class FoodService {
   http: any;
+  static getFoodById: any;
 
   constructor() {}
 

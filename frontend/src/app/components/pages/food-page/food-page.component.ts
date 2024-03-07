@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FoodService } from 'src/app/services/food.service';
 import { Food } from 'src/app/shared/models/Food';
 import { StarRatingComponent } from "../../partials/star-rating/star-rating.component";
 import { NgFor } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
     selector: 'app-food-page',
@@ -15,11 +16,19 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class FoodPageComponent implements OnInit {
   food!: Food;
-  constructor(activatedRoute: ActivatedRoute, foodService: FoodService) {
+  constructor(activatedRoute: ActivatedRoute, foodService: FoodService, 
+    private cartService:CartService, private router: Router ) {
     activatedRoute.params.subscribe((params) => {
       if (params.id) this.food = foodService.getFoodById(params.id);
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+  addToCart(){
+    this.cartService.addToCart(this.food);
+    this.router.navigateByUrl('/cart-page')
+  }
 }

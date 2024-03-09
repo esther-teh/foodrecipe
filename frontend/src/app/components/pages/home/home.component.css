@@ -8,7 +8,7 @@ ul{
 }
 
 li a{
-    height: 22.5rem;
+    height: 24rem;
     width: 20rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
@@ -57,10 +57,14 @@ li a img{
     align-items: flex-start;
 }
 
+.origins{
+    flex: 9;
+}
+
 .origins span{
     border-radius: 2rem;
     background-color: whitesmoke;
-    display: inline;
+    display: inline-block;
     font-size: 0.8rem;
     color: grey;
     margin-right: 0.3rem;
@@ -76,7 +80,6 @@ li a img{
 
 .price{
     position: absolute;
-    bottom: 0;
     left: 0.9rem;
     background: white;
     padding: 0.3rem 100% 0 0;

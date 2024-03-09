@@ -13,7 +13,7 @@ export class CartService {
   constructor() {}
 
   addToCart(food: Food): void {
-    let cartItem = this.cart.items.find((item) => item.food.id === food.id);
+    let cartItem = this.cart.items.find(item => item.food.id === food.id);
     if (cartItem) return;
 
     this.cart.items.push(new CartItem(food));

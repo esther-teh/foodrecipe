@@ -7,6 +7,7 @@ import { NgFor } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
 import { SearchComponent } from '../../partials/search/search.component';
 import { TagsComponent } from "../../partials/tags/tags.component";
+import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ import { TagsComponent } from "../../partials/tags/tags.component";
     CurrencyPipe,
     SearchComponent,
     TagsComponent,
-    RouterLink
+    RouterLink,
+    NotFoundComponent
   ],
 })
 export class HomeComponent implements OnInit {

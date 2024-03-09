@@ -3,16 +3,17 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FoodService } from 'src/app/services/food.service';
 import { Food } from 'src/app/shared/models/Food';
 import { StarRatingComponent } from "../../partials/star-rating/star-rating.component";
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { CurrencyPipe } from '@angular/common';
 import { CartService } from 'src/app/services/cart.service';
+import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 
 @Component({
     selector: 'app-food-page',
     standalone: true,
     templateUrl: './food-page.component.html',
     styleUrl: './food-page.component.css',
-    imports: [StarRatingComponent, NgFor, RouterLink, CurrencyPipe]
+    imports: [StarRatingComponent, NgFor, NgIf, RouterLink, CurrencyPipe, NotFoundComponent]
 })
 export class FoodPageComponent implements OnInit {
   food!: Food;

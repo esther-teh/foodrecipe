@@ -3,23 +3,23 @@ import { RouterLink } from '@angular/router';
 import { Cart } from 'src/app/shared/models/Cart'
 import { CartService } from 'src/app/services/cart.service';
 import { CartItem } from 'src/app/shared/models/CartItem';
-import { Title } from '@angular/platform-browser';
-
-
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { TitleComponent } from '../../partials/title/title.component';
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [RouterLink, Title],
+  imports: [RouterLink, CurrencyPipe, NgFor, NgIf, TitleComponent],
   templateUrl: './cart-page.component.html',
-  styleUrl: './cart-page.component.css'
+  styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit {
   cart!: Cart;
   constructor(private cartService: CartService) {
-    this.cartService.getCartObservable().subscribe((cart) => {
+  this.cartService.getCartObservable().subscribe((cart
+      ) => {
       this.cart = cart;
-    })
+      })
     }
 
   ngOnInit(): void {
@@ -29,9 +29,8 @@ export class CartPageComponent implements OnInit {
     this.cartService.removeFromCart(cartItem.food.id);
   }
 
-changeQuantity(cartItem:CartItem,quantityInString:string){
+changeQuantity(cartItem:CartItem, quantityInString:string){
   const quantity = parseInt(quantityInString);
-  this.cartService.changeQuantity(CartItem.food.id, quantity);
+  this.cartService.changeQuantity(cartItem.food.id, quantity);
   }
-
 }

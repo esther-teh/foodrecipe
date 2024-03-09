@@ -8,6 +8,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { TitleComponent } from './components/partials/title/title.component';
 
 
+
 @NgModule({
   declarations: [ ],
   imports: [HomeComponent,

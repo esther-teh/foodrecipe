@@ -6,6 +6,8 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
+import { provideHttpClient } from '@angular/common/http';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,8 +18,10 @@ export const appConfig: ApplicationConfig = {
       { path: 'food/:id', component: FoodPageComponent },
       { path: 'cart-page', component: CartPageComponent },
       { path: 'title/:title', component: TitleComponent },
-      { path: 'not-found', component: NotFoundComponent}
+      { path: 'not-found', component: NotFoundComponent},
+      { path: 'login', component: LoginPageComponent},
     ]),
     provideClientHydration(),
+    provideHttpClient()
   ],
 };

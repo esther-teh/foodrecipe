@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { TitleComponent } from '../../partials/title/title.component';
 import { NgIf } from '@angular/common';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-page',
@@ -14,7 +15,9 @@ export class LoginPageComponent implements OnInit {
 
   loginForm!: FormGroup;
   isSubmitted = false;
-  constructor(private formBuilder:FormBuilder) { }
+  returnUrl = '';
+  constructor(private formBuilder:FormBuilder
+    , private userService:UserService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -31,9 +34,8 @@ export class LoginPageComponent implements OnInit {
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
-    alert(`email: ${this.fc.email.value},
-      password: ${this.fc.password.value}`)
-
+    this.userService.login({email:this.fc.email.value,
+      password: this.fc.password.value});    
   }
 
 }

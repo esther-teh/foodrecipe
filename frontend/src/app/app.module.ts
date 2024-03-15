@@ -8,6 +8,9 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { timeout } from 'rxjs';
 
 @NgModule({
   declarations: [],
@@ -20,7 +23,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      positionClass:'toast-bottom-right',
+      newestOnTop: false
+    })
   ],
 })
 export class AppModule {}

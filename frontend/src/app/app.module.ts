@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { timeout } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [],
@@ -23,6 +25,8 @@ import { timeout } from 'rxjs';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
+    LoginPageComponent,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({

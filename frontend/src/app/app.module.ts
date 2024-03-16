@@ -32,6 +32,7 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
     ToastrModule.forRoot({
       timeOut:3000,
       positionClass:'toast-bottom-right',
+      preventDuplicates: true,
       newestOnTop: false
     })
   ],

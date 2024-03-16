@@ -4,6 +4,7 @@ import { TitleComponent } from '../../partials/title/title.component';
 import { NgIf } from '@angular/common';
 import { UserService } from 'src/app/services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-page',

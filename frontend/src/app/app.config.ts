@@ -6,8 +6,10 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +24,8 @@ export const appConfig: ApplicationConfig = {
       { path: 'login', component: LoginPageComponent},
     ]),
     provideClientHydration(),
-    provideHttpClient()
+    provideHttpClient(withFetch()),
+    provideAnimations(),
+    provideToastr()
   ],
 };

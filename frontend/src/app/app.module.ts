@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { timeout } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
 
 @NgModule({
   declarations: [],
@@ -26,6 +28,8 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
     TitleComponent,
     NotFoundComponent,
     LoginPageComponent,
+    InputContainerComponent,
+    InputValidationComponent,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

@@ -5,13 +5,15 @@ import { NgIf } from '@angular/common';
 import { UserService } from 'src/app/services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { InputContainerComponent } from "../../partials/input-container/input-container.component";
+import { InputValidationComponent } from "../../partials/input-validation/input-validation.component";
 
 @Component({
-  selector: 'app-login-page',
-  standalone: true,
-  imports: [TitleComponent, ReactiveFormsModule, NgIf],
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+    selector: 'app-login-page',
+    standalone: true,
+    templateUrl: './login-page.component.html',
+    styleUrls: ['./login-page.component.css'],
+    imports: [TitleComponent, ReactiveFormsModule, NgIf, InputContainerComponent, InputValidationComponent]
 })
 export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;

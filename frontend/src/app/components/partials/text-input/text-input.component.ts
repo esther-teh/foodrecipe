@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { InputValidationComponent } from "../input-validation/input-validation.component";
+import { InputContainerComponent } from "../input-container/input-container.component";
 
 @Component({
-  selector: 'app-text-input',
-  standalone: true,
-  imports: [],
-  templateUrl: './text-input.component.html',
-  styleUrl: './text-input.component.css'
+    selector: 'text-input',
+    standalone: true,
+    templateUrl: './text-input.component.html',
+    styleUrls: ['./text-input.component.css'],
+    imports: [InputValidationComponent, InputContainerComponent, ReactiveFormsModule]
 })
 export class TextInputComponent implements OnInit{
 
@@ -21,6 +23,10 @@ export class TextInputComponent implements OnInit{
 
   @Input()
   type: 'text' | 'password' | 'email' = 'text';
+
+  get formControl(){
+    return this.control as FormControl;
+  }
 
   constructor() { }
 

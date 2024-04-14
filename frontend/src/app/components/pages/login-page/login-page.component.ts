@@ -7,13 +7,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { InputContainerComponent } from "../../partials/input-container/input-container.component";
 import { InputValidationComponent } from "../../partials/input-validation/input-validation.component";
+import { TextInputComponent } from "../../partials/text-input/text-input.component";
+import { DefaultButtonComponent } from "../../partials/default-button/default-button.component";
 
 @Component({
     selector: 'app-login-page',
     standalone: true,
     templateUrl: './login-page.component.html',
     styleUrls: ['./login-page.component.css'],
-    imports: [TitleComponent, ReactiveFormsModule, NgIf, InputContainerComponent, InputValidationComponent]
+    imports: [TitleComponent, ReactiveFormsModule, NgIf, InputContainerComponent, InputValidationComponent, TextInputComponent, DefaultButtonComponent]
 })
 export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;

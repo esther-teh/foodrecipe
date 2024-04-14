@@ -1,6 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'default-button',

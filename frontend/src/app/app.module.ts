@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 
 @NgModule({
   declarations: [],
@@ -30,6 +31,7 @@ import { InputContainerComponent } from './components/partials/input-container/i
     LoginPageComponent,
     InputContainerComponent,
     InputValidationComponent,
+    DefaultButtonComponent,
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

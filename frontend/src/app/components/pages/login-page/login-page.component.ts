@@ -4,7 +4,6 @@ import { TitleComponent } from '../../partials/title/title.component';
 import { NgIf } from '@angular/common';
 import { UserService } from 'src/app/services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrModule } from 'ngx-toastr';
 import { InputContainerComponent } from "../../partials/input-container/input-container.component";
 import { InputValidationComponent } from "../../partials/input-validation/input-validation.component";
 import { TextInputComponent } from "../../partials/text-input/text-input.component";
